@@ -2,7 +2,7 @@ CC	= cc
 CFLAGS	= -Wall -Werror -Wextra -g
 RM	= rm -f
 
-SRCS	= main.c utils.c log.c
+SRCS	= main.c validations.c utils.c log.c
 OBJS	= $(SRCS:.c=.o)
 NAME	= push_swap
 

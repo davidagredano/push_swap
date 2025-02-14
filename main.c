@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/12 21:27:10 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:57:05 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	main(int argc, char **argv)
 	if (!arguments)
 		return (1);
 	print_arguments(arguments);
+	if (!are_valid_arguments(arguments))
+		return (1);
 	free(arguments);
 	return (0);
 }
