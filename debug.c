@@ -24,13 +24,13 @@ void	stacks_print(t_stacks *stacks)
 	printf("     A           B     \n");
 }
 
-void	print_arguments(char **strs)
+void	arguments_print(char **arguments)
 {
 	printf("Arguments array: ");
-	while (*strs)
+	while (*arguments)
 	{
-		printf("\"%s\" ", *strs);
-		strs++;
+		printf("\"%s\" ", *arguments);
+		arguments++;
 	}
 	printf("\n");
 }

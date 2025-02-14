@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 19:32:26 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/14 23:42:32 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ typedef struct s_stacks
 	int	b_len;
 }			t_stacks;
 
-/* Validations */
-int			are_valid_arguments(char **arguments);
-int			check_unique_values(t_stacks *stacks);
+/* Arguments */
+t_stacks	*arguments_process(int argc, char **argv);
 
-/* Stack */
+/* Stacks */
 t_stacks	*stacks_init(char **arguments);
+void		stacks_free(t_stacks *stacks);
 
 /* Utils */
-int			count_words(char *str);
-int			count_words_arr(int argc, char **argv);
+int			strs_count_words(char **strs, int len);
+int			strs_len(char **strs);
 
-/* Log */
+/* Debug */
+void		arguments_print(char **arguments);
 void		stacks_print(t_stacks *stacks);
-void		print_arguments(char **strs);
 
 #endif
