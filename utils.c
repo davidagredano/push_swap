@@ -6,11 +6,19 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:40:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 23:41:49 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/15 00:04:09 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+
+/**
+ * Prints an error message to the standard error output (stderr).
+ */
+void	print_error(void)
+{
+	ft_putendl_fd("Error", STDERR_FILENO);
+}
 
 /**
  * Counts the number of words in a string. A word is defined as a sequence 

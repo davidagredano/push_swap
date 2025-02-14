@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 23:42:32 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/15 00:07:37 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ t_stacks	*stacks_init(char **arguments);
 void		stacks_free(t_stacks *stacks);
 
 /* Utils */
-int			strs_count_words(char **strs, int len);
 int			strs_len(char **strs);
+int			strs_count_words(char **strs, int len);
+void		print_error(void);
 
 /* Debug */
 void		arguments_print(char **arguments);
