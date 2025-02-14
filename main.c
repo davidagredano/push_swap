@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 17:44:10 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/14 19:34:27 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	main(int argc, char **argv)
 	arguments = get_unique_arguments(argc - 1, argv + 1);
 	if (!arguments)
 		return (1);
-	print_arguments(arguments);
 	if (!are_valid_arguments(arguments))
 	{
 		free(arguments);
@@ -64,6 +63,13 @@ int	main(int argc, char **argv)
 	if (!stacks)
 	{
 		free(arguments);
+		return (1);
+	}
+	if (!check_unique_values(stacks))
+	{
+		free(stacks->a);
+		free(stacks->b);
+		free(stacks);
 		return (1);
 	}
 	stacks_print(stacks);

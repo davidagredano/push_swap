@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 18:31:56 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/14 19:32:26 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stacks
 
 /* Validations */
 int			are_valid_arguments(char **arguments);
+int			check_unique_values(t_stacks *stacks);
 
 /* Stack */
 t_stacks	*stacks_init(char **arguments);

@@ -6,14 +6,38 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:52:28 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 15:54:59 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/14 19:35:22 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "libft/libft.h"
 #define ABS_INT_MAX "2147483647"
 #define ABS_INT_MIN "2147483648"
 #define INT_LIMITS_LEN 10
+
+/**
+ * Checks if there are duplicates in the stack a.
+ */
+int	check_unique_values(t_stacks *stacks)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < stacks->a_len - 1)
+	{
+		j = i + 1;
+		while (j < stacks->a_len)
+		{
+			if (stacks->a[i] == stacks->a[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
 
 /**
  * Checks valid number number format. An optional leading positive 
