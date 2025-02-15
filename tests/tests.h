@@ -10,6 +10,7 @@
 # define KO "\e[31mKO\e[0m"
 # define OK "\e[32mOK\e[0m"
 
+# include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
