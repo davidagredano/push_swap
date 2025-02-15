@@ -1,7 +1,7 @@
-validations:
-	$(CC) -o $@ validations.c utils.c ../validations.c -L../libft -lft
-	./validations
-	@$(RM) validations
+arguments_validate:
+	$(CC) -o $@ $@.c utils.c ../arguments.c -L../libft -lft
+	./$@
+	@$(RM) $@
 
 fclean:
 	$(RM) validations
