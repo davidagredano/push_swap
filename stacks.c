@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:51:42 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 23:24:52 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/15 13:54:02 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ static void	stacks_populate(t_stacks *stacks, char **arguments)
  */
 void	stacks_free(t_stacks *stacks)
 {
-	if (stacks->a) 
+	if (stacks->a)
 		free(stacks->a);
-	if (stacks->b) 
+	if (stacks->b)
 		free(stacks->b);
 	free(stacks);
 	stacks = NULL;

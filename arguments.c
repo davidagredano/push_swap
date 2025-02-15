@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:52:28 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 23:32:27 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/15 13:54:39 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ static int	arguments_validate(char **arguments)
 {
 	while (*arguments)
 	{
-		if (!argument_is_valid_nbr(*arguments) || 
-			!argument_is_valid_int(*arguments))
+		if (!argument_is_valid_nbr(*arguments)
+			|| !argument_is_valid_int(*arguments))
 		{
 			return (0);
 		}
