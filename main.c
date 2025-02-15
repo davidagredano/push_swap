@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 23:57:27 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:16:27 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 		print_error();
 		return (1);
 	}
-	stacks_print(stacks);
+	stacks_sort(stacks);
 	stacks_free(stacks);
 	return (0);
 }

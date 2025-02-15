@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/15 12:13:25 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/15 20:45:56 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,17 @@ t_stacks	*arguments_process(int argc, char **argv);
 /* Stacks */
 t_stacks	*stacks_init(char **arguments);
 void		stacks_free(t_stacks *stacks);
+void		stacks_sort(t_stacks *stacks);
 
 /* Operations */
 void		swap(char stack, t_stacks *stacks);
 void		push(char stack, t_stacks *stacks);
 void		rotate(char stack, t_stacks *stacks);
 void		reverse_rotate(char stack, t_stacks *stacks);
+
+/* Sort */
+void		sort_two(t_stacks *stacks);
+void		sort_three(t_stacks *stacks);
 
 /* Utils */
 int			strs_len(char **strs);
