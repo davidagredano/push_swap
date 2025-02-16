@@ -2,7 +2,7 @@ CC	= cc
 CFLAGS	= -Wall -Werror -Wextra -g
 RM	= rm -f
 
-SRCS	= main.c arguments.c stacks.c stack.c operations.c sort.c \
+SRCS	= main.c arguments.c stacks.c stack.c operations.c sort_few.c \
 	utils.c debug.c
 OBJS	= $(SRCS:.c=.o)
 NAME	= push_swap
