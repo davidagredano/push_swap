@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:51:42 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/15 20:54:58 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/16 13:57:27 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include "libft/libft.h"
 
 /**
- * Handles the sorting operations based on the stack size.
+ * Handles the sorting operations based on the initial stack size.
  */
 void	stacks_sort(t_stacks *stacks)
 {
 	if (stacks->a_len == 2)
-		sort_two(stacks);
+		sort_two('a', stacks);
 	else if (stacks->a_len == 3)
-		sort_three(stacks);
+		sort_three('a', stacks);
 }
 
 /**
