@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/16 13:59:34 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:03:54 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,45 @@
 
 # include <stdlib.h> // malloc, free
 
-typedef struct s_stacks
+typedef struct s_stack
 {
-	int	*a;
-	int	*b;
-	int	a_len;
-	int	b_len;
-}			t_stacks;
+	char	key;
+	int		*val;
+	int		len;
+	int		top;
+	int		bot;
+}		t_stack;
 
 /* Arguments */
-t_stacks	*arguments_process(int argc, char **argv);
+t_stack	**arguments_process(int argc, char **argv);
 
 /* Stacks */
-t_stacks	*stacks_init(char **arguments);
-void		stacks_free(t_stacks *stacks);
-void		stacks_sort(t_stacks *stacks);
+t_stack	**stacks_init(char **arguments);
+void	stacks_free(t_stack **stacks);
 
 /* Stack */
-int			stack_is_sorted(char target_stack, t_stacks *stacks);
-int			stack_is_sequential(char target_stack, t_stacks *stacks);
-int			stack_find_start(char target_stack, t_stacks *stacks);
+t_stack	*stack_get_by_key(char key, t_stack **stacks);
+int		stack_is_sorted(t_stack *stack);
+int		stack_is_sequential(t_stack *stack);
+int		stack_find_start(t_stack *stack);
 
 /* Operations */
-void		swap(char target_stack, t_stacks *stacks);
-void		push(char target_stack, t_stacks *stacks);
-void		rotate(char target_stack, t_stacks *stacks);
-void		reverse_rotate(char target_stack, t_stacks *stacks);
+void	swap(char key, t_stack **stacks);
+void	push(char key, t_stack **stacks);
+void	rotate(char key, t_stack **stacks);
+void	reverse_rotate(char key, t_stack **stacks);
 
-/* Sort */
-void		sort_two(char target_stack, t_stacks *stacks);
-void		sort_three(char target_stack, t_stacks *stacks);
+/* Sort few */
+void	sort_two(char key, t_stack **stacks);
+void	sort_three(char key, t_stack **stacks);
 
 /* Utils */
-int			strs_len(char **strs);
-int			strs_count_words(char **strs, int len);
-void		print_error(void);
+int		strs_len(char **strs);
+int		strs_count_words(char **strs, int len);
+void	print_error(void);
 
 /* Debug */
-void		arguments_print(char **arguments);
-void		stacks_print(t_stacks *stacks);
+void	arguments_print(char **arguments);
+void	stacks_print(t_stack **stacks);
 
 #endif

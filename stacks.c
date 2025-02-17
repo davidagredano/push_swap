@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:51:42 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/16 13:57:27 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/17 18:12:46 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,20 @@
 #include "libft/libft.h"
 
 /**
- * Handles the sorting operations based on the initial stack size.
+ * Checks for duplicate values in a given stack.
  */
-void	stacks_sort(t_stacks *stacks)
-{
-	if (stacks->a_len == 2)
-		sort_two('a', stacks);
-	else if (stacks->a_len == 3)
-		sort_three('a', stacks);
-}
-
-/**
- * Checks for duplicate values in stack 'a'.
- */
-static int	stacks_validate(t_stacks *stacks)
+static int	stack_validate(t_stack *stack)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	while (i < stacks->a_len - 1)
+	i = stack->bot;
+	while (i < stack->top)
 	{
 		j = i + 1;
-		while (j < stacks->a_len)
+		while (j <= stack->top)
 		{
-			if (stacks->a[i] == stacks->a[j])
+			if (stack->val[i] == stack->val[j])
 				return (0);
 			j++;
 		}
@@ -48,57 +37,90 @@ static int	stacks_validate(t_stacks *stacks)
 }
 
 /**
- * Populates stack 'a' from top to bottom with arguments converted to integers.
+ * Populates a stack from top to bottom with arguments converted to integers.
  */
-static void	stacks_populate(t_stacks *stacks, char **arguments)
+static void	stack_populate(char **arguments, int len, t_stack *stack)
 {
 	int	i;
 
-	i = stacks->a_len - 1;
+	stack->len = len;
+	stack->top = len - 1;
+	i = stack->top;
 	while (*arguments)
 	{
-		stacks->a[i] = ft_atoi(*arguments);
+		stack->val[i] = ft_atoi(*arguments);
 		i--;
 		arguments++;
 	}
 }
 
 /**
- * Frees the memory allocated for both stacks and the stacks structure itself.
+ * Frees both stacks and their allocated values.
  */
-void	stacks_free(t_stacks *stacks)
+void	stacks_free(t_stack **stacks)
 {
-	if (stacks->a)
-		free(stacks->a);
-	if (stacks->b)
-		free(stacks->b);
+	if (stacks[0])
+	{
+		if (stacks[0]->val)
+			free(stacks[0]->val);
+		free(stacks[0]);
+	}
+	if (stacks[1])
+	{
+		if (stacks[1]->val)
+			free(stacks[1]->val);
+		free(stacks[1]);
+	}
 	free(stacks);
 	stacks = NULL;
 }
 
 /**
- * Allocates and initializes a new stacks structure with two integer arrays for
- * stack 'a' and stack 'b'. Populates stack 'a' with the arguments converted
- * to integers. Returns the stacks structure or NULL if any step fails.
+ * Allocates and initializes a stack with the given key and value length.
  */
-t_stacks	*stacks_init(char **arguments)
+static t_stack	*stack_init(char key, int val_len)
 {
-	t_stacks	*stacks;
+	t_stack	*stack;
 
-	stacks = (t_stacks *) ft_calloc(1, sizeof(t_stacks));
+	stack = (t_stack *) ft_calloc(1, sizeof(t_stack));
+	if (!stack)
+		return (NULL);
+	stack->key = key;
+	stack->val = (int *) ft_calloc(val_len, sizeof(int));
+	if (!stack->val)
+	{
+		free(stack);
+		stack = NULL;
+		return (NULL);
+	}
+	stack->len = 0;
+	stack->top = stack->len - 1;
+	stack->bot = 0;
+	return (stack);
+}
+
+/**
+ * Allocates and initializes stacks 'a' and 'b', then populates stack 'a'
+ * with the given arguments and validates there are no duplicates.
+ */
+t_stack	**stacks_init(char **arguments)
+{
+	t_stack	**stacks;
+	int		arguments_len;
+
+	stacks = (t_stack **) ft_calloc(2, sizeof(t_stack *));
 	if (!stacks)
 		return (NULL);
-	stacks->a_len = strs_len(arguments);
-	stacks->b_len = 0;
-	stacks->a = (int *) ft_calloc(stacks->a_len, sizeof(int));
-	stacks->b = (int *) ft_calloc(stacks->a_len, sizeof(int));
-	if (!stacks->a || !stacks->b)
+	arguments_len = strs_len(arguments);
+	stacks[0] = stack_init('a', arguments_len);
+	stacks[1] = stack_init('b', arguments_len);
+	if (!stacks[0] || !stacks[1])
 	{
 		stacks_free(stacks);
 		return (NULL);
 	}
-	stacks_populate(stacks, arguments);
-	if (!stacks_validate(stacks))
+	stack_populate(arguments, arguments_len, stacks[0]);
+	if (!stack_validate(stacks[0]))
 	{
 		stacks_free(stacks);
 		return (NULL);

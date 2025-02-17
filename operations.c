@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:29:38 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/16 13:19:08 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:41:48 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,64 +15,61 @@
 
 /**
  * Shifts down all elements of stack 'a', stack 'b', or both stacks ('r') by 1.
- * The last element moves to the first position at the top.
+ * The element at the bottom moves to the top.
  */
-void	reverse_rotate(char target_stack, t_stacks *stacks)
+void	reverse_rotate(char key, t_stack **stacks)
 {
-	int	tmp;
-	int	i_top;
-	int	i;
+	int		tmp;
+	int		i;
 
-	if ((target_stack == 'a' || target_stack == 'r') && stacks->a_len > 1)
+	if ((key == 'a' || key == 'r') && stacks[0]->len > 1)
 	{
-		i_top = stacks->a_len - 1;
-		i = 0;
-		tmp = stacks->a[i];
-		while (++i <= i_top)
-			stacks->a[i - 1] = stacks->a[i];
-		stacks->a[i_top] = tmp;
+		tmp = stacks[0]->val[stacks[0]->bot];
+		i = stacks[0]->bot;
+		while (++i <= stacks[0]->top)
+			stacks[0]->val[i - 1] = stacks[0]->val[i];
+		stacks[0]->val[stacks[0]->top] = tmp;
 	}
-	if ((target_stack == 'b' || target_stack == 'r') && stacks->b_len > 1)
+	if ((key == 'b' || key == 'r') && stacks[1]->len > 1)
 	{
-		i_top = stacks->b_len - 1;
-		i = 0;
-		tmp = stacks->b[i];
-		while (++i <= i_top)
-			stacks->b[i - 1] = stacks->b[i];
-		stacks->b[i_top] = tmp;
+		tmp = stacks[1]->val[stacks[1]->bot];
+		i = stacks[1]->bot;
+		while (++i <= stacks[1]->top)
+			stacks[1]->val[i - 1] = stacks[1]->val[i];
+		stacks[1]->val[stacks[1]->top] = tmp;
 	}
 	ft_putstr("rr");
-	ft_putchar(target_stack);
+	ft_putchar(key);
 	ft_putchar('\n');
 }
 
 /**
  * Shifts up all elements of stack 'a', stack 'b', or both stacks ('r') by 1.
- * The first element moves to the last position at the bottom.
+ * The element at the top moves to the bottom.
  */
-void	rotate(char target_stack, t_stacks *stacks)
+void	rotate(char key, t_stack **stacks)
 {
 	int	tmp;
 	int	i;
 
-	if ((target_stack == 'a' || target_stack == 'r') && stacks->a_len > 1)
+	if ((key == 'a' || key == 'r') && stacks[0]->len > 1)
 	{
-		i = stacks->a_len - 1;
-		tmp = stacks->a[i];
-		while (--i >= 0)
-			stacks->a[i + 1] = stacks->a[i];
-		stacks->a[0] = tmp;
+		tmp = stacks[0]->val[stacks[0]->top];
+		i = stacks[0]->top;
+		while (--i >= stacks[0]->bot)
+			stacks[0]->val[i + 1] = stacks[0]->val[i];
+		stacks[0]->val[stacks[0]->bot] = tmp;
 	}
-	if ((target_stack == 'b' || target_stack == 'r') && stacks->b_len > 1)
+	if ((key == 'b' || key == 'r') && stacks[1]->len > 1)
 	{
-		i = stacks->b_len - 1;
-		tmp = stacks->b[i];
-		while (--i >= 0)
-			stacks->b[i + 1] = stacks->b[i];
-		stacks->b[0] = tmp;
+		tmp = stacks[1]->val[stacks[1]->top];
+		i = stacks[1]->top;
+		while (--i >= stacks[1]->bot)
+			stacks[1]->val[i + 1] = stacks[1]->val[i];
+		stacks[1]->val[stacks[1]->bot] = tmp;
 	}
 	ft_putchar('r');
-	ft_putchar(target_stack);
+	ft_putchar(key);
 	ft_putchar('\n');
 }
 
@@ -80,24 +77,28 @@ void	rotate(char target_stack, t_stacks *stacks)
  * Takes the first element at the top of stack 'b' and moves it to the top
  * of stack 'a', or vice versa.
  */
-void	push(char target_stack, t_stacks *stacks)
+void	push(char key, t_stack **stacks)
 {
-	if (target_stack == 'a' && stacks->b_len > 0)
+	if (key == 'a' && stacks[0]->len > 0)
 	{
-		stacks->a[stacks->a_len] = stacks->b[stacks->b_len - 1];
-		stacks->a_len++;
-		stacks->b[stacks->b_len - 1] = 0;
-		stacks->b_len--;
+		stacks[0]->val[stacks[0]->top + 1] = stacks[1]->val[stacks[1]->top];
+		stacks[0]->len++;
+		stacks[0]->top++;
+		stacks[1]->val[stacks[1]->top] = 0;
+		stacks[1]->len--;
+		stacks[1]->top--;
 	}
-	else if (target_stack == 'b' && stacks->a_len > 0)
+	else if (key == 'b' && stacks[0]->len > 0)
 	{
-		stacks->b[stacks->b_len] = stacks->a[stacks->a_len - 1];
-		stacks->b_len++;
-		stacks->a[stacks->a_len - 1] = 0;
-		stacks->a_len--;
+		stacks[1]->val[stacks[1]->top + 1] = stacks[0]->val[stacks[0]->top];
+		stacks[1]->len++;
+		stacks[1]->top++;
+		stacks[0]->val[stacks[1]->top] = 0;
+		stacks[0]->len--;
+		stacks[0]->top--;
 	}
 	ft_putchar('p');
-	ft_putchar(target_stack);
+	ft_putchar(key);
 	ft_putchar('\n');
 }
 
@@ -105,23 +106,23 @@ void	push(char target_stack, t_stacks *stacks)
  * Swaps the first two elements at the top of stack 'a', stack 'b',
  * or both stacks ('s').
  */
-void	swap(char target_stack, t_stacks *stacks)
+void	swap(char key, t_stack **stacks)
 {
 	int	tmp;
 
-	if ((target_stack == 'a' || target_stack == 's') && stacks->a_len > 1)
+	if ((key == 'a' || key == 's') && stacks[0]->len > 1)
 	{
-		tmp = stacks->a[stacks->a_len - 2];
-		stacks->a[stacks->a_len - 2] = stacks->a[stacks->a_len - 1];
-		stacks->a[stacks->a_len - 1] = tmp;
+		tmp = stacks[0]->val[stacks[0]->top];
+		stacks[0]->val[stacks[0]->top] = stacks[0]->val[stacks[0]->top - 1];
+		stacks[0]->val[stacks[0]->top - 1] = tmp;
 	}
-	if ((target_stack == 'b' || target_stack == 's') && stacks->b_len > 1)
+	if ((key == 'b' || key == 's') && stacks[1]->len > 1)
 	{
-		tmp = stacks->b[stacks->b_len - 2];
-		stacks->b[stacks->b_len - 2] = stacks->b[stacks->b_len - 1];
-		stacks->b[stacks->b_len - 1] = tmp;
+		tmp = stacks[1]->val[stacks[1]->top];
+		stacks[1]->val[stacks[1]->top] = stacks[1]->val[stacks[1]->top - 1];
+		stacks[1]->val[stacks[1]->top - 1] = tmp;
 	}
 	ft_putchar('s');
-	ft_putchar(target_stack);
+	ft_putchar(key);
 	ft_putchar('\n');
 }

@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:52:28 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/15 13:54:39 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:31:32 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,10 +115,10 @@ static char	**arguments_tokenize(int argc, char **argv)
  * and initializes a new stacks structure with them. Returns the 
  * stacks structure or NULL if any step fails.
  */
-t_stacks	*arguments_process(int argc, char **argv)
+t_stack	**arguments_process(int argc, char **argv)
 {
-	t_stacks	*stacks;
-	char		**arguments;
+	t_stack	**stacks;
+	char	**arguments;
 
 	arguments = arguments_tokenize(argc - 1, argv + 1);
 	if (!arguments)

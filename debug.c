@@ -2,23 +2,23 @@
 #include <stdio.h>
 #include <sys/param.h> // MAX
 
-void	stacks_print(t_stacks *stacks)
+void	stacks_print(t_stack **stacks)
 {
 	int	i;
 	int	a_show;
 	int	b_show;
 
-	i = MAX(stacks->a_len - 1, stacks->b_len - 1);
-	while (i >= 0)
+	i = MAX(stacks[0]->top, stacks[1]->top);
+	while (i >= stacks[0]->bot)
 	{
-		a_show = i < stacks->a_len;
-		b_show = i < stacks->b_len;
+		a_show = i <= stacks[0]->top;
+		b_show = i <= stacks[1]->top;
 		if (a_show && !b_show)
-			printf("%-11d\n", stacks->a[i]);
+			printf("%-11d\n", stacks[0]->val[i]);
 		else if (a_show && b_show)
-			printf("%-11d %-11d\n", stacks->a[i], stacks->b[i]);
+			printf("%-11d %-11d\n", stacks[0]->val[i], stacks[1]->val[i]);
 		else
-			printf("%-11s %-11d\n", "", stacks->b[i]);
+			printf("%-11s %-11d\n", "", stacks[1]->val[i]);
 		i--;
 	}
 	printf("----------- -----------\n");
