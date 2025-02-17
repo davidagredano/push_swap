@@ -1,5 +1,6 @@
 #include "push_swap.h"
 #include <stdio.h>
+#include <sys/param.h> // MAX
 
 void	stacks_print(t_stacks *stacks)
 {
@@ -7,7 +8,7 @@ void	stacks_print(t_stacks *stacks)
 	int	a_show;
 	int	b_show;
 
-	i = stacks->a_len - 1;
+	i = MAX(stacks->a_len - 1, stacks->b_len - 1);
 	while (i >= 0)
 	{
 		a_show = i < stacks->a_len;
