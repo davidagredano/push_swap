@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/17 18:03:54 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/18 23:35:56 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_stack
 	int		len;
 	int		top;
 	int		bot;
+	int		next_move;
 }		t_stack;
 
 /* Arguments */
@@ -43,9 +44,18 @@ void	push(char key, t_stack **stacks);
 void	rotate(char key, t_stack **stacks);
 void	reverse_rotate(char key, t_stack **stacks);
 
-/* Sort few */
+/* Batch Operations */
+void	put_top(int index, char key, t_stack **stacks);
+void	put_top_double(int a_index, int b_index, t_stack **stacks);
+
+/* Sort */
 void	sort_two(char key, t_stack **stacks);
 void	sort_three(char key, t_stack **stacks);
+void	sort_many(t_stack **stacks);
+
+/* Sort Utils */
+void	align_three(char key, t_stack **stacks);
+void	find_next_move(t_stack **stacks);
 
 /* Utils */
 int		strs_len(char **strs);

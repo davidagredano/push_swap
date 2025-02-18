@@ -1,22 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_few.c                                         :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:45:33 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/17 17:29:26 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/18 23:45:21 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	sort_many(t_stack **stacks)
+{
+	int	debugging = 0; // TODO
+
+	if (debugging)
+		print_stacks(stacks, "Initial state"); // TODO
+
+	while (stacks[0]->len > 3)
+		push('b', stacks);
+	if (debugging)
+		print_stacks(stacks, "State after batch push:"); // TODO
+
+	align_three('a', stacks);
+	if (debugging)
+		print_stacks(stacks, "State after aligning stack 'a':"); // TODO
+
+	while (stacks[1]->len > 0)
+	{
+		find_next_move(stacks);
+		//printf("\nNext cheapest move: insert b[%d]=%d to a[%d]=%d\n\n", b_index, stacks[1]->val[b_index], a_index, stacks[0]->val[a_index]); // TODO
+
+		put_top_double(stacks[0]->next_move, stacks[1]->next_move, stacks);
+		push('a', stacks);
+		if (debugging)
+			print_stacks(stacks, "State after smart insert:"); // TODO
+	}
+	put_top(stack_find_start(stacks[0]), 'a', stacks);
+	if (debugging)
+		print_stacks(stacks, "Final state:"); // TODO
+}
+
 /**
  * Ensures three elements in a stack are in sequential order.
  * Swaps them if necessary.
  */
-static void	align_three(char key, t_stack **stacks)
+void	align_three(char key, t_stack **stacks)
 {
 	t_stack	*stack;
 

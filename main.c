@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/17 17:59:03 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/17 19:52:12 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static void	sort(t_stack **stacks)
 		sort_two('a', stacks);
 	else if (stacks[0]->len == 3)
 		sort_three('a', stacks);
+	else if (stacks[0]->len > 3)
+		sort_many(stacks);
 }
 
 int	main(int argc, char **argv)

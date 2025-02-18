@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:51:42 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/17 18:12:46 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/18 23:28:17 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ static t_stack	*stack_init(char key, int val_len)
 	stack->len = 0;
 	stack->top = stack->len - 1;
 	stack->bot = 0;
+	stack->next_move = -1;
 	return (stack);
 }
 
