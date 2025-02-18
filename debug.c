@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include <sys/param.h> // MAX
 
-void	stacks_print(t_stack **stacks)
+void	print_stacks(t_stack **stacks, char *message)
 {
 	int	i;
 	int	a_show;
 	int	b_show;
 
+	printf("%s\n", message);
 	i = MAX(stacks[0]->top, stacks[1]->top);
 	while (i >= stacks[0]->bot)
 	{
@@ -25,7 +26,7 @@ void	stacks_print(t_stack **stacks)
 	printf("     A           B     \n");
 }
 
-void	arguments_print(char **arguments)
+void	print_arguments(char **arguments)
 {
 	printf("Arguments array: ");
 	while (*arguments)

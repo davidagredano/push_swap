@@ -53,7 +53,7 @@ int		strs_count_words(char **strs, int len);
 void	print_error(void);
 
 /* Debug */
-void	arguments_print(char **arguments);
-void	stacks_print(t_stack **stacks);
+void	print_arguments(char **arguments);
+void	print_stacks(t_stack **stacks, char *message);
 
 #endif
