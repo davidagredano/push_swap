@@ -5,8 +5,5 @@ arguments_validate:
 	./$@
 	@$(RM) $@
 
-operations:
-	$(CC) -o $@ $@.c utils.c get_next_line.c $(SRCS) -L../libft -lft
-
 fclean:
-	$(RM) arguments_validate operations
+	$(RM) arguments_validate

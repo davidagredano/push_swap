@@ -1,5 +1,35 @@
-#include "tests.h"
 #include "../push_swap.h"
+
+# define RED "\e[31m"
+# define GREEN "\e[32m"
+# define CYAN "\e[36m"
+# define GRAY "\e[2;37m"
+# define COLOR_RESET "\e[0m"
+
+# define KO "\e[31mKO\e[0m"
+# define OK "\e[32mOK\e[0m"
+
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+
+void	ft_print_test_header(const char *str)
+{
+	size_t	size;
+	size_t	i;
+
+	size = strlen(str);
+	printf("%s", CYAN);
+	i = 0;
+	while (i++ < size)
+		printf("*");
+	printf("\n%s\n", str);
+	i = 0;
+	while (i++ < size)
+		printf("*");
+	printf("%s\n", COLOR_RESET);
+}
 
 static void	arguments_validate_test_case(char *argument, int expected)
 {
