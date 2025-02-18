@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:29:38 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/17 17:41:48 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/17 20:41:42 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	push(char key, t_stack **stacks)
 		stacks[1]->val[stacks[1]->top + 1] = stacks[0]->val[stacks[0]->top];
 		stacks[1]->len++;
 		stacks[1]->top++;
-		stacks[0]->val[stacks[1]->top] = 0;
+		stacks[0]->val[stacks[0]->top] = 0;
 		stacks[0]->len--;
 		stacks[0]->top--;
 	}
