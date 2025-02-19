@@ -6,16 +6,17 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 18:13:09 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/19 15:10:48 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/19 15:22:10 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
- * Checks if the given value is smaller than all elements in the stack.
+ * Checks if the given value is either the smallest or the greatest
+ * among all elements in the stack.
  */
-static int	value_is_smallest(int value, t_stack *stack)
+static int	value_is_extreme(int value, t_stack *stack)
 {
 	int	i;
 
@@ -23,19 +24,11 @@ static int	value_is_smallest(int value, t_stack *stack)
 	while (i >= stack->bot)
 	{
 		if (value > stack->val[i])
-			return (0);
+			break ;
 		i--;
 	}
-	return (1);
-}
-
-/**
- * Checks if the given value is greater than all elements in the stack.
- */
-static int	value_is_greatest(int value, t_stack *stack)
-{
-	int	i;
-
+	if (i < stack->bot)
+		return (1);
 	i = stack->top;
 	while (i >= stack->bot)
 	{
@@ -104,8 +97,7 @@ static int	value_insertion_index(int value, t_stack *stack)
 {
 	int	i;
 
-	if (value_is_smallest(value, stack)
-		|| value_is_greatest(value, stack))
+	if (value_is_extreme(value, stack))
 		return (stack_find_start(stack));
 	if (stack->val[stack->bot] < value && value < stack->val[stack->top])
 		return (stack->top);
