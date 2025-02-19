@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 20:03:39 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/19 00:00:43 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/19 13:39:08 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,30 @@ void	put_top(int index, char key, t_stack **stacks)
 }
 
 /**
- * Moves the elements at the given indices to the top of their stacks.
+ * Moves two elements to the top of their respective stacks simultaneously.
+ * Uses double rotation when both indices are in the top or bottom half.
+ * Completes the movement with individual rotations if needed.
  */
 void	put_top_double(int a_index, int b_index, t_stack **stacks)
 {
+	if (a_index >= stacks[0]->top / 2 && b_index >= stacks[1]->top / 2)
+	{
+		while (a_index < stacks[0]->top && b_index < stacks[1]->top)
+		{
+			rotate('r', stacks);
+			a_index++;
+			b_index++;
+		}
+	}
+	else if (a_index < stacks[0]->top / 2 && b_index < stacks[1]->top / 2)
+	{
+		while (a_index >= stacks[0]->bot && b_index >= stacks[1]->bot)
+		{
+			reverse_rotate('r', stacks);
+			a_index--;
+			b_index--;
+		}
+	}
 	put_top(a_index, 'a', stacks);
 	put_top(b_index, 'b', stacks);
 }
