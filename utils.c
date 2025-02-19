@@ -6,11 +6,21 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:40:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/15 13:52:48 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/19 14:49:25 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+
+/**
+ * Returns the smaller of two integers.
+ */
+int	min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
 
 /**
  * Prints an error message to the standard error output (stderr).

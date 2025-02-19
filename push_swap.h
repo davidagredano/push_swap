@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/18 23:35:56 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/19 14:50:38 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	find_next_move(t_stack **stacks);
 int		strs_len(char **strs);
 int		strs_count_words(char **strs, int len);
 void	print_error(void);
+int		min(int a, int b);
 
 /* Debug */
 void	print_arguments(char **arguments);

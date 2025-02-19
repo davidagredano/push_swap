@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 18:13:09 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/19 00:01:09 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/19 15:10:48 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,38 @@ static int	cost_to_top(int index, t_stack *stack)
 }
 
 /**
+ * Calculates the number of moves required to bring two elements
+ * (one from each stack) to the top using optimal double rotations.
+ */
+static int	cost_to_top_double(int a, int b, t_stack **stacks)
+{
+	int	moves;
+	int	a_distance;
+	int	b_distance;
+
+	moves = 0;
+	if (a >= stacks[0]->top / 2 && b >= stacks[1]->top / 2)
+	{
+		a_distance = stacks[0]->top - a;
+		b_distance = stacks[1]->top - b;
+		moves += min(a_distance, b_distance);
+		a += moves;
+		b += moves;
+	}
+	else if (a < stacks[0]->top / 2 && b < stacks[1]->top / 2)
+	{
+		a_distance = a + 1;
+		b_distance = b + 1;
+		moves += min(a_distance, b_distance);
+		a -= moves;
+		b -= moves;
+	}
+	moves += cost_to_top(a, stacks[0]);
+	moves += cost_to_top(b, stacks[1]);
+	return (moves);
+}
+
+/**
  * Finds the index in the stack where the given value should be inserted
  * to maintain order.
  * If the value is the smallest or greatest, returns the stack's starting index.
@@ -102,7 +134,7 @@ void	find_next_move(t_stack **stacks)
 	while (b <= stacks[1]->top)
 	{
 		a = value_insertion_index(stacks[1]->val[b], stacks[0]);
-		cost = cost_to_top(b, stacks[1]) + cost_to_top(a, stacks[0]);
+		cost = cost_to_top_double(a, b, stacks);
 		if (cost < min_cost || min_cost == 0)
 		{
 			min_cost = cost;
