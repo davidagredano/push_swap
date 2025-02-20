@@ -6,18 +6,60 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 17:45:33 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/18 23:45:21 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:18:48 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	median_value(t_stack *stack)
+{
+	int	count[2];
+	int	i;
+	int	j;
+
+	i = stack->bot;
+	while (i <= stack->top)
+	{
+		count[0] = 0;
+		count[1] = 0;
+		j = stack->bot;
+		while (j <= stack->top)
+		{
+			if (stack->val[j] < stack->val[i])
+				count[0]++;
+			else if (stack->val[j] > stack->val[i])
+				count[1]++;
+			if (count[0] > stack->top / 2 || count[1] > stack->len / 2)
+				break ;
+			j++;
+		}
+		if (count[0] == stack->top / 2 && count[1] == stack->len / 2)
+			return (stack->val[i]);
+		i++;
+	}
+	return (0);
+}
+
 void	sort_many(t_stack **stacks)
 {
 	int	debugging = 0; // TODO
+	int	median;
+	int	i;
 
 	if (debugging)
 		print_stacks(stacks, "Initial state"); // TODO
+
+	median = median_value(stacks[0]);
+	i = stacks[0]->top;
+	while (i >= stacks[0]->bot)
+	{
+		if (stacks[0]->val[stacks[0]->top] < median)
+			push('b', stacks);
+		else
+			rotate('a', stacks);
+		i--;
+	}
 
 	while (stacks[0]->len > 3)
 		push('b', stacks);
