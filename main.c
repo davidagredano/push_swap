@@ -6,24 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/17 19:52:12 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:27:45 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/**
- * Handles the sorting operations based on the initial stack size.
- */
-static void	sort(t_stack **stacks)
-{
-	if (stacks[0]->len == 2)
-		sort_two('a', stacks);
-	else if (stacks[0]->len == 3)
-		sort_three('a', stacks);
-	else if (stacks[0]->len > 3)
-		sort_many(stacks);
-}
 
 int	main(int argc, char **argv)
 {

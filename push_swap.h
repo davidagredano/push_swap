@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/19 14:50:38 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/20 12:28:33 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,9 @@ void	put_top(int index, char key, t_stack **stacks);
 void	put_top_double(int a_index, int b_index, t_stack **stacks);
 
 /* Sort */
-void	sort_two(char key, t_stack **stacks);
-void	sort_three(char key, t_stack **stacks);
-void	sort_many(t_stack **stacks);
+void	sort(t_stack **stacks);
 
 /* Sort Utils */
-void	align_three(char key, t_stack **stacks);
 void	find_next_move(t_stack **stacks);
 
 /* Utils */
