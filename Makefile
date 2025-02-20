@@ -1,20 +1,20 @@
-CC	= cc
-CFLAGS	= -Wall -Werror -Wextra -g
-RM	= rm -f
+CC =	cc
+CFLAGS = -Wall -Werror -Wextra -g
+RM =	rm -f
 
-SRCS	= main.c arguments.c stacks.c stack.c operations.c batch_operations.c \
-	find_next_move.c utils.c debug.c
-OBJS	= $(SRCS:.c=.o)
-NAME	= push_swap
+SRCS =	$(addprefix src/, main.c arguments.c stacks.c stack.c operations.c \
+	batch_operations.c find_next_move.c utils.c)
+OBJS =	$(SRCS:.c=.o)
+NAME =	push_swap
 
-.PHONY: all
-all:	$(NAME) 
+.PHONY:	all
+all:	$(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -Llibft -lft -o $@
+	$(CC) $^ -Llibft -lft -o $@
 
-%.o:	%.c push_swap.h Makefile
-	$(CC) -c $(CFLAGS) -o $@ $<
+%.o: %.c src/push_swap.h Makefile
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 .PHONY:	clean
 clean:

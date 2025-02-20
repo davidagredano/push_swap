@@ -6,12 +6,12 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:52:28 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/17 17:31:32 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:46:29 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
+#include "../libft/libft.h"
 #define INT_LIMITS_LEN 10
 #define ABS_INT_MIN "2147483648"
 #define ABS_INT_MAX "2147483647"
