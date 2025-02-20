@@ -6,11 +6,45 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:22:57 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/17 18:14:10 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/20 14:39:14 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/**
+ * Finds the median value of the stack, the value that has an equal number
+ * of elements smaller and larger than it.
+ * Returns the median value, or 0 if no median is found.
+ */
+int	stack_median_value(t_stack *stack)
+{
+	int	count[2];
+	int	i;
+	int	j;
+
+	i = stack->bot;
+	while (i <= stack->top)
+	{
+		count[0] = 0;
+		count[1] = 0;
+		j = stack->bot;
+		while (j <= stack->top)
+		{
+			if (stack->val[j] < stack->val[i])
+				count[0]++;
+			else if (stack->val[j] > stack->val[i])
+				count[1]++;
+			if (count[0] > stack->top / 2 || count[1] > stack->len / 2)
+				break ;
+			j++;
+		}
+		if (count[0] == stack->top / 2 && count[1] == stack->len / 2)
+			return (stack->val[i]);
+		i++;
+	}
+	return (0);
+}
 
 /**
  * Returns the starting index of a sequential stack. The stack may be rotated.
