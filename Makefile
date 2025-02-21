@@ -2,12 +2,12 @@ CC =	cc
 CFLAGS = -Wall -Werror -Wextra -g
 RM =	rm -f
 
-SRCS =	$(addprefix src/, main.c arguments.c stacks.c stack.c operations.c \
+SRCS =	$(addprefix srcs/, main.c arguments.c stacks.c stack.c operations.c \
 	batch_operations.c find_next_move.c utils.c)
 OBJS =	$(SRCS:.c=.o)
 NAME =	push_swap
 
-SRCS_BONUS = $(addprefix src_bonus/, main_bonus.c arguments_bonus.c \
+SRCS_BONUS = $(addprefix srcs_bonus/, main_bonus.c arguments_bonus.c \
 	stacks_bonus.c stack_bonus.c instructions_bonus.c get_next_line.c \
 	operations_bonus.c utils_bonus.c)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
