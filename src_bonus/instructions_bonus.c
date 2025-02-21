@@ -6,11 +6,35 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:32:56 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 16:48:44 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:59:33 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+/**
+ * Executes each instruction from the list, modifying the stacks in place.
+ */
+void	instructions_execute(t_list **instructions, t_stack **stacks)
+{
+	char	*instruction;
+	t_list	*ptr;
+
+	ptr = *instructions;
+	while (ptr)
+	{
+		instruction = (char *) ptr->content;
+		if (instruction[0] == 's')
+			swap(instruction[1], stacks);
+		else if (instruction[0] == 'p')
+			push(instruction[1], stacks);
+		else if (instruction[0] == 'r' && ft_strlen(instruction) == 3)
+			rotate(instruction[1], stacks);
+		else if (instruction[0] == 'r' && ft_strlen(instruction) == 4)
+			reverse_rotate(instruction[2], stacks);
+		ptr = ptr->next;
+	}
+}
 
 /**
  * Frees the linked list of instructions and its contents.

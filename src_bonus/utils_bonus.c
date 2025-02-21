@@ -6,11 +6,23 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:40:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 18:36:08 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:53:21 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "checker.h"
+
+/**
+ * Displays the final sort status: "OK" if the main stack is sorted
+ * and the stack 'b' is empty, "KO" otherwise.
+ */
+void	print_result(t_stack **stacks)
+{
+	if (stack_is_sorted(stacks[0]) && stacks[1]->len == 0)
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO\n");
+}
 
 /**
  * Prints an error message to the standard error output (stderr).
