@@ -6,14 +6,17 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 18:36:01 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/20 20:17:15 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
+# define BUFFER_SIZE 512
+
 # include <stdlib.h> // free
+# include <unistd.h> // read
 
 typedef struct s_stack
 {
@@ -36,5 +39,6 @@ void	stacks_free(t_stack **stacks);
 int		strs_len(char **strs);
 int		strs_count_words(char **strs, int len);
 void	print_error(void);
+char	*get_next_line(int fd);
 
 #endif
