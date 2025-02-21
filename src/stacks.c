@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:51:42 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 17:46:52 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 14:47:45 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /**
  * Checks for duplicate values in a given stack.
  */
-static int	stack_validate(t_stack *stack)
+static int	stack_is_valid(t_stack *stack)
 {
 	int	i;
 	int	j;
@@ -121,7 +121,7 @@ t_stack	**stacks_init(char **arguments)
 		return (NULL);
 	}
 	stack_populate(arguments, arguments_len, stacks[0]);
-	if (!stack_validate(stacks[0]))
+	if (!stack_is_valid(stacks[0]))
 	{
 		stacks_free(stacks);
 		return (NULL);
