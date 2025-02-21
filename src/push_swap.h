@@ -6,14 +6,18 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 13:32:28 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:17:00 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h> // free
+# define ABS_INT_MAX "2147483647"
+# define ABS_INT_MIN "2147483648"
+# define INT_LIMITS_LEN 10
+
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {

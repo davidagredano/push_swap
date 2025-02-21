@@ -6,12 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:29:38 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 17:47:29 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:17:11 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "../libft/libft.h"
 
 /**
  * Shifts down all elements of stack 'a', stack 'b', or both stacks ('r') by 1.

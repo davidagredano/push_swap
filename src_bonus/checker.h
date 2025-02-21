@@ -6,18 +6,20 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 17:41:14 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:19:40 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
+# define ABS_INT_MAX "2147483647"
+# define ABS_INT_MIN "2147483648"
+# define INT_LIMITS_LEN 10
+
 # define BUFFER_SIZE 512
 
 # include "../libft/libft.h"
-# include <stdlib.h> // free
-# include <unistd.h> // read
 
 typedef struct s_stack
 {
