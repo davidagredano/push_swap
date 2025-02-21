@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 12:13:03 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 20:25:44 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 13:18:25 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ static char	*clean_line(char *line)
 		free(line);
 		line = NULL;
 		return (NULL);
+	}
+	if (remainder[0] == '\0')
+	{
+		free(remainder);
+		remainder = NULL;
 	}
 	line[ft_strchr(line, '\n') - line + 1] = '\0';
 	return (remainder);
