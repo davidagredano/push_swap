@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:22:57 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 14:39:14 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:55:04 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 /**
  * Finds the median value of the stack, the value that has an equal number

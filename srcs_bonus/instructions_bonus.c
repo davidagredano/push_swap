@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 16:32:56 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 17:59:33 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:56:57 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../includes/checker_bonus.h"
 
 /**
  * Executes each instruction from the list, modifying the stacks in place.

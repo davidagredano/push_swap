@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:40:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 17:53:21 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:56:47 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../includes/checker_bonus.h"
 
 /**
  * Displays the final sort status: "OK" if the main stack is sorted

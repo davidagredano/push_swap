@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:51:42 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:13:35 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:57:10 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../includes/checker_bonus.h"
 
 /**
  * Checks for duplicate values in a given stack.

@@ -19,7 +19,7 @@ all:	$(NAME)
 $(NAME): $(OBJS)
 	$(CC) $^ -Llibft -lft -o $@
 
-%.o: %.c src/push_swap.h src_bonus/checker.h Makefile
+%.o: %.c includes/push_swap.h includes/checker_bonus.h Makefile
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 .PHONY:	clean

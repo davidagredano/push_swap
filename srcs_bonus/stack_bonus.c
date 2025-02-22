@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:19:22 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 17:33:20 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:57:06 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../includes/checker_bonus.h"
 
 /**
  * Returns the starting index of a sequential stack. The stack may be rotated.

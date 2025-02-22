@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:29:38 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 17:13:55 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:57:01 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../includes/checker_bonus.h"
 
 /**
  * Shifts down all elements of stack 'a', stack 'b', or both stacks ('r') by 1.

@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 14:31:36 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:54:54 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 /**
  * Sorts stack 'a' using a multi-step process:

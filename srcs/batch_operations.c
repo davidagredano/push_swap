@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 20:03:39 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/20 14:30:45 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:54:46 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 /**
  * Moves the element at the given index to the top of the specified stack.

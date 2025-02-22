@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 18:09:55 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 17:46:33 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:56:02 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../includes/checker_bonus.h"
 
 /**
  * Entry point of the program.

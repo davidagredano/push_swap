@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   next_move.c                                        :+:      :+:    :+:   */
+/*   find_next_move.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 18:13:09 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/19 15:22:10 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:54:51 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 /**
  * Checks if the given value is either the smallest or the greatest
