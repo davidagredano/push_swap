@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:50:07 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 13:01:26 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/22 11:32:25 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int		ft_putstr(const char *s);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*get_next_line(int fd);
 
 typedef struct s_list
 {

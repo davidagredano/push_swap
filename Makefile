@@ -8,8 +8,8 @@ OBJS =	$(SRCS:.c=.o)
 NAME =	push_swap
 
 SRCS_BONUS = $(addprefix srcs_bonus/, main_bonus.c arguments_bonus.c \
-	stacks_bonus.c stack_bonus.c instructions_bonus.c get_next_line.c \
-	operations_bonus.c utils_bonus.c)
+	stacks_bonus.c stack_bonus.c instructions_bonus.c operations_bonus.c \
+	utils_bonus.c)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 NAME_BONUS = checker
 

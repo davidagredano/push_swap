@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:53:23 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/22 11:34:35 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,5 @@ int		strs_len(char **strs);
 int		strs_count_words(char **strs, int len);
 void	print_error(void);
 void	print_result(t_stack **stacks);
-char	*get_next_line(int fd);
 
 #endif
