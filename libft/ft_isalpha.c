@@ -6,10 +6,9 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:15:38 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/23 02:25:16 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:54:50 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 static int	ft_islower(int c)
 {
