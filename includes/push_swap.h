@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/23 02:39:29 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:00:27 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # define ABS_INT_MIN "2147483648"
 # define INT_LIMITS_LEN 10
 
-# include <stddef.h>
+# include <stdlib.h> // free
 
 typedef struct s_stack
 {
@@ -30,7 +30,9 @@ typedef struct s_stack
 }		t_stack;
 
 /* Arguments */
-t_stack	**arguments_process(int argc, char **argv);
+int		arguments_prevalidate(int argc, char **argv);
+char	**arguments_tokenize(int argc, char **argv);
+int		arguments_validate(char **arguments);
 
 /* Stacks */
 t_stack	**stacks_init(char **arguments);

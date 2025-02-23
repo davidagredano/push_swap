@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:52:28 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:55:45 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:03:33 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	argument_is_valid_nbr(char *str)
  * Checks if all arguments are valid. A valid argument is a string 
  * representation of an integer within the range of a signed int.
  */
-static int	arguments_validate(char **arguments)
+int	arguments_validate(char **arguments)
 {
 	while (*arguments)
 	{
@@ -79,7 +79,7 @@ static int	arguments_validate(char **arguments)
  * Allocates and populates an array of strings, handling both multi-word
  * and standalone arguments.
  */
-static char	**arguments_tokenize(int argc, char **argv)
+char	**arguments_tokenize(int argc, char **argv)
 {
 	char	**arguments;
 	int		count;
@@ -107,29 +107,26 @@ static char	**arguments_tokenize(int argc, char **argv)
 }
 
 /**
- * Processes the program arguments, tokenizes them, validates them, 
- * and initializes a new stacks structure with them. Returns the 
- * stacks structure or NULL if any step fails.
+ * Checks if all preprocessed arguments contain at least one digit.
  */
-t_stack	**arguments_process(int argc, char **argv)
+int	arguments_prevalidate(int argc, char **argv)
 {
-	t_stack	**stacks;
-	char	**arguments;
+	int	i;
+	int	j;
 
-	arguments = arguments_tokenize(argc - 1, argv + 1);
-	if (!arguments)
-		return (NULL);
-	if (!arguments_validate(arguments))
+	i = 0;
+	while (i < argc)
 	{
-		free(arguments);
-		return (NULL);
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			if (ft_isdigit(argv[i][j]))
+				break ;
+			j++;
+		}
+		if (!ft_isdigit(argv[i][j]))
+			return (0);
+		i++;
 	}
-	stacks = stacks_init(arguments);
-	if (!stacks)
-	{
-		free(arguments);
-		return (NULL);
-	}
-	free(arguments);
-	return (stacks);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:54:54 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:58:44 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,42 @@
  *    This continues until stack 'b' is empty.
  * 4. Rotates stack 'a' to position the smallest number at the top.
  */
-void	sort(t_stack **stacks)
+static void	sort(t_stack **stacks)
 {
 	batch_push_selective('b', stacks, stack_median_value(stacks[0]));
 	batch_push('b', stacks, 2);
 	batch_insert_a(stacks);
 	put_top(stack_find_start(stacks[0]), 'a', stacks);
+}
+
+/**
+ * Processes the program arguments, tokenizes them, validates them,
+ * and initializes a new stacks structure with them. Returns the
+ * stacks structure or NULL if any step fails.
+ */
+static t_stack	**arguments_process(int argc, char **argv)
+{
+	t_stack	**stacks;
+	char	**arguments;
+
+	if (!arguments_prevalidate(argc - 1, argv + 1))
+		return (NULL);
+	arguments = arguments_tokenize(argc - 1, argv + 1);
+	if (!arguments)
+		return (NULL);
+	if (!arguments_validate(arguments))
+	{
+		free(arguments);
+		return (NULL);
+	}
+	stacks = stacks_init(arguments);
+	if (!stacks)
+	{
+		free(arguments);
+		return (NULL);
+	}
+	free(arguments);
+	return (stacks);
 }
 
 /**
