@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:58:21 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/14 12:58:22 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:28:24 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /**
  * Compares two strings. Returns 0 if the strings are equal, a negative value

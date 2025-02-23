@@ -6,17 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:32:20 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/11 18:15:46 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:25:44 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-/**
- * Converts an integer to a string representation.
- * Allocates memory for the resulting string and returns it,
- * or NULL if allocation fails.
- */
+#include "../includes/libft.h"
 
 static int	ft_nlen(int n)
 {
@@ -30,6 +24,11 @@ static int	ft_neg_sign(int n)
 	return (n < 0);
 }
 
+/**
+ * Converts an integer to a string representation.
+ * Allocates memory for the resulting string and returns it,
+ * or NULL if allocation fails.
+ */
 char	*ft_itoa(int n)
 {
 	char	*str;

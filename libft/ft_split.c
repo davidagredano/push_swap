@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 13:32:44 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/03 12:16:05 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:28:14 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static size_t	ft_count_substrs(char *str, char c);
 static size_t	ft_next_substr_len(char *str, char c);
@@ -22,7 +22,6 @@ static int		ft_alloc_substr(char **ptr, size_t len, char **arr, size_t *i);
  * with a NULL pointer.
  * Returns the array of substrings, or NULL if allocation fails.
  */
-
 char	**ft_split(char const *s, char c)
 {
 	char	**substrs;

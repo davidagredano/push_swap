@@ -6,11 +6,12 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:51:42 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:55:09 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:34:36 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
 /**
  * Checks for duplicate values in a given stack.

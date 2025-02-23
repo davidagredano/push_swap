@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 19:18:22 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/12 21:16:39 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:29:05 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /**
  * Splits a string into tokens using specified delimiter characters.

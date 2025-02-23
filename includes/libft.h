@@ -6,12 +6,16 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:50:07 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/22 11:32:25 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:31:55 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 512
+# endif
 
 # include <stddef.h>
 # include <stdlib.h>

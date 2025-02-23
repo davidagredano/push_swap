@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:32:56 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/03 11:07:30 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:28:48 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /**
  * Applies a function to each character of a string,
@@ -18,7 +18,6 @@
  * and creating a new string with the results.
  * Returns the newly allocated string, or NULL if allocation fails.
  */
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*new;

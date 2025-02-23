@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 10:30:08 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/03 11:50:20 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:29:09 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static unsigned int	ft_get_start(char const *s1, char const *set);
 static size_t		ft_get_len(char const *s1, char const *set);
@@ -20,7 +20,6 @@ static size_t		ft_get_len(char const *s1, char const *set);
  * that are present in a set of characters.
  * Returns the trimmed string, or NULL if allocation fails.
  */
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*new;

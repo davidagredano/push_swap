@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:14:58 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/02 21:47:27 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:26:20 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /**
  * Creates a new list element with the given content.
  * Allocates memory for the element and sets its content and next pointer.
  * Returns a pointer to the new element, or NULL if allocation fails.
  */
-
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;

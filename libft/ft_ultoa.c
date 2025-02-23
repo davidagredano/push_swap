@@ -6,17 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 12:43:55 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/12 13:50:37 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:29:48 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-/**
- * Converts an unsigned long to a string representation (using lowercase).
- * Allocates memory for the resulting string and returns it,
- * or NULL if allocation fails.
- */
+#include "../includes/libft.h"
 
 static int	ft_nlen(unsigned long n, int radix)
 {
@@ -25,6 +19,11 @@ static int	ft_nlen(unsigned long n, int radix)
 	return (1 + ft_nlen(n / radix, radix));
 }
 
+/**
+ * Converts an unsigned long to a string representation (using lowercase).
+ * Allocates memory for the resulting string and returns it,
+ * or NULL if allocation fails.
+ */
 char	*ft_ultoa(unsigned long n, int radix)
 {
 	char	*str;

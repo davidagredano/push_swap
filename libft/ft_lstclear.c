@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 12:17:19 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/02 21:46:53 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:25:58 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /**
  * Deletes and frees the list element pointed to,
@@ -18,7 +18,6 @@
  * The function uses the provided del function
  * to free the content of each element.
  */
-
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;

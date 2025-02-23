@@ -6,17 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 11:47:12 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/12 11:55:25 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:29:39 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-/**
- * Converts an unsigned integer to a string representation (using uppercase).
- * Allocates memory for the resulting string and returns it,
- * or NULL if allocation fails.
- */
+#include "../includes/libft.h"
 
 static int	ft_nlen(unsigned int n, int radix)
 {
@@ -25,6 +19,11 @@ static int	ft_nlen(unsigned int n, int radix)
 	return (1 + ft_nlen(n / radix, radix));
 }
 
+/**
+ * Converts an unsigned integer to a string representation (using uppercase).
+ * Allocates memory for the resulting string and returns it,
+ * or NULL if allocation fails.
+ */
 char	*ft_uitoa_caps(unsigned int n, int radix)
 {
 	char	*str;

@@ -6,11 +6,12 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:40:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:55:13 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:36:33 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
 /**
  * Returns the smaller of two integers.

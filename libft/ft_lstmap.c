@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 15:59:30 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/02 21:47:21 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:26:17 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /**
  * Iterates through a list, applying the given function
@@ -18,7 +18,6 @@
  * Creates a new list with the results of the function applied to each element.
  * Returns the new list, or NULL if memory allocation fails.
  */
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;

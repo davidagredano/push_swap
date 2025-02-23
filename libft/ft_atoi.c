@@ -6,18 +6,17 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:10:09 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/01 21:28:39 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:24:46 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 /**
  * Converts a string to an integer, handling leading white space and sign.
  * Stops conversion at the first non-digit character.
  * Returns the resulting integer.
  */
-
 static int	ft_isspace(char c)
 {
 	return (c == ' ' || (c >= '\t' && c <= '\r'));

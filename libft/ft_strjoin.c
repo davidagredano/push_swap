@@ -6,18 +6,17 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 18:49:24 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/03 11:47:21 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:28:34 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "../includes/libft.h"
 
 /**
  * Concatenates two strings into a new string.
  * Returns the newly allocated string containing s1 followed by s2,
  * or NULL if allocation fails.
  */
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*newstr;

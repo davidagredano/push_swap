@@ -6,11 +6,12 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 12:52:28 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:54:25 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/23 02:34:00 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
 /**
  * Checks if the number is within the int range.
