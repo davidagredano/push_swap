@@ -2,6 +2,18 @@
 #include <stdio.h>
 #include <sys/param.h> // MAX
 
+void	print_instructions(t_list **instructions)
+{
+	t_list *ptr;
+
+	ptr = *instructions;
+	while (ptr)
+	{
+		ft_putstr((char *) ptr->content);
+		ptr = ptr->next;
+	}
+}
+
 void	print_stacks(t_stack **stacks, char *message)
 {
 	int	i;
