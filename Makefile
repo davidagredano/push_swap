@@ -63,8 +63,9 @@ $(BUILD_DIR_BONUS):
 
 clean:
 	$(RMDIR) $(BUILD_DIR) $(BUILD_DIR_BONUS)
+	$(MAKE) clean -C libft
 
 fclean: clean
-	$(RM) $(NAME) $(NAME_BONUS)
+	$(RM) $(NAME) $(NAME_BONUS) libft/libft.a
 
 re:	fclean all
