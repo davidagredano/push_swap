@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:19:22 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:57:06 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:33:09 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ int	stack_find_start(t_stack *stack)
 {
 	int	i;
 
-	if (stack->len == 1)
-		return (stack->top);
-	if (stack->val[stack->top] < stack->val[stack->bot])
+	if (stack->val[stack->top] < stack->val[stack->bot] || stack->len == 1)
 		return (stack->top);
 	i = stack->top;
 	while (--i >= stack->bot)

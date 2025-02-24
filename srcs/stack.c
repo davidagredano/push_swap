@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 13:22:57 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:55:04 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:33:24 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	stack_find_start(t_stack *stack)
 {
 	int	i;
 
-	if (stack->val[stack->top] < stack->val[stack->bot])
+	if (stack->val[stack->top] < stack->val[stack->bot] || stack->len == 1)
 		return (stack->top);
 	i = stack->top;
 	while (--i >= stack->bot)
@@ -75,6 +75,8 @@ int	stack_is_sequential(t_stack *stack)
 	int	start_found;
 	int	i;
 
+	if (stack->len == 1)
+		return (1);
 	start_found = 0;
 	if (stack->val[stack->top] < stack->val[stack->bot])
 		start_found = 1;
