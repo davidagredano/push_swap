@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/23 16:58:44 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:27:35 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,13 @@
  */
 static void	sort(t_stack **stacks)
 {
-	batch_push_selective('b', stacks, stack_median_value(stacks[0]));
-	batch_push('b', stacks, 2);
-	batch_insert_a(stacks);
-	put_top(stack_find_start(stacks[0]), 'a', stacks);
+	if (!stack_is_sorted(stacks[0]))
+	{
+		batch_push_selective('b', stacks, stack_median_value(stacks[0]));
+		batch_push('b', stacks, 2);
+		batch_insert_a(stacks);
+		put_top(stack_find_start(stacks[0]), 'a', stacks);
+	}
 }
 
 /**
