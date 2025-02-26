@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:29:38 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/23 02:36:04 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/26 17:32:23 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	rotate(char key, t_stack **stacks)
  */
 void	push(char key, t_stack **stacks)
 {
-	if (key == 'a' && stacks[0]->len > 0)
+	if (key == 'a' && stacks[1]->len > 0)
 	{
 		stacks[0]->val[stacks[0]->top + 1] = stacks[1]->val[stacks[1]->top];
 		stacks[0]->len++;
