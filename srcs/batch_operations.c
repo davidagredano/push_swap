@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 20:03:39 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/21 21:54:46 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:06:12 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,19 @@ void	put_top(int index, char key, t_stack **stacks)
 	stack = stack_get_by_key(key, stacks);
 	if (index >= stack->top / 2)
 	{
-		while (index++ < stack->top)
+		while (index < stack->top)
+		{
 			rotate(key, stacks);
+			index++;
+		}
 	}
 	else
 	{
-		while (index-- >= stack->bot)
+		while (index >= stack->bot)
+		{
 			reverse_rotate(key, stacks);
+			index--;
+		}
 	}
 }
 
@@ -81,7 +87,7 @@ void	batch_insert_a(t_stack **stacks)
  * Moves elements from one stack to another, leaving only
  * the specified number of values in the source stack.
  */
-void	batch_push(char key, t_stack **stacks, int values_to_leave)
+void	batch_push(char key, t_stack **stacks, int leave)
 {
 	t_stack	*src;
 
@@ -89,16 +95,16 @@ void	batch_push(char key, t_stack **stacks, int values_to_leave)
 		src = stack_get_by_key('b', stacks);
 	else if (key == 'b')
 		src = stack_get_by_key('a', stacks);
-	while (src->len > values_to_leave)
+	while (src->len > leave)
 		push(key, stacks);
 }
 
 /**
- * Pushes elements selectively from one stack to another.
- * Only values smaller than the given cut_off_value are pushed,
- * while others are rotated to the bottom of the source stack.
+ * Pushes elements smaller than the given cutoff value to another stack.
+ * Leaves the specified number of elements in the source stack.
+ * Elements not meeting the condition are rotated to the bottom.
  */
-void	batch_push_selective(char key, t_stack **stacks, int cut_off_value)
+void	batch_push_smallest(char key, t_stack **stacks, int cutoff, int leave)
 {
 	t_stack	*src;
 	int		i;
@@ -108,9 +114,9 @@ void	batch_push_selective(char key, t_stack **stacks, int cut_off_value)
 	else if (key == 'b')
 		src = stack_get_by_key('a', stacks);
 	i = src->top;
-	while (i >= src->bot)
+	while (i >= leave)
 	{
-		if (src->val[src->top] < cut_off_value)
+		if (src->val[src->top] < cutoff)
 			push(key, stacks);
 		else
 			rotate(src->key, stacks);

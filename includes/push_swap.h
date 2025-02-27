@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:41:13 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/23 20:16:30 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:04:45 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	rotate(char key, t_stack **stacks);
 void	reverse_rotate(char key, t_stack **stacks);
 
 /* Batch Operations */
-void	batch_push_selective(char key, t_stack **stacks, int cut_off_value);
-void	batch_push(char key, t_stack **stacks, int values_to_leave);
+void	batch_push_smallest(char key, t_stack **stacks, int cutoff, int leave);
+void	batch_push(char key, t_stack **stacks, int leave);
 void	batch_insert_a(t_stack **stacks);
 void	put_top_double(int a_index, int b_index, t_stack **stacks);
 void	put_top(int index, char key, t_stack **stacks);

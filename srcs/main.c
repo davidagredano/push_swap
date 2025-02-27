@@ -6,35 +6,21 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 13:17:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/02/26 13:00:46 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:00:33 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /**
- * Sorts a stack of three elements.
- * Adjusts their order using swaps and rotations if necessary.
- */
-static void	sort_three(char key, t_stack **stacks)
-{
-	t_stack	*stack;
-
-	stack = stack_get_by_key(key, stacks);
-	if (stack->len != 3)
-		return ;
-	if (!stack_is_sequential(stack))
-		swap('a', stacks);
-	if (stack_find_start(stack) == stack->top)
-		return ;
-	else if (stack_find_start(stack) == stack->bot)
-		reverse_rotate('a', stacks);
-	else
-		rotate('a', stacks);
-}
-
-/**
- * Handles the sorting operations based on the stack size.
+ * Sorts stack 'a' using a multi-step process:
+ * 1. Pushes all values smaller than the median to stack 'b'.
+ * 2. Pushes the remaining values to 'b' until only three remain in 'a'.
+ * 3. Align the three elements in 'a'.
+ * 4. Inserts the items back into 'a', always choosing the move that
+ *    requires the least amount of operations for correct placement.
+ *    This continues until 'b' is empty.
+ * 5. Rotates 'a' so the smallest number is on top.
  */
 static void	sort(t_stack **stacks)
 {
@@ -43,24 +29,12 @@ static void	sort(t_stack **stacks)
 	a = stack_get_by_key('a', stacks);
 	if (stack_is_sorted(a))
 		return ;
-	if (a->len == 2)
+	batch_push_smallest('b', stacks, stack_median_value(a), 3);
+	batch_push('b', stacks, 3);
+	if (!stack_is_sequential(a))
 		swap('a', stacks);
-	else if (a->len == 3)
-		sort_three('a', stacks);
-	else if (a->len <= 5)
-	{
-		batch_push('b', stacks, 3);
-		sort_three('a', stacks);
-		batch_insert_a(stacks);
-		put_top(stack_find_start(a), 'a', stacks);
-	}
-	else if (a->len > 5)
-	{
-		batch_push_selective('b', stacks, stack_median_value(a));
-		batch_push('b', stacks, 2);
-		batch_insert_a(stacks);
-		put_top(stack_find_start(a), 'a', stacks);
-	}
+	batch_insert_a(stacks);
+	put_top(stack_find_start(a), 'a', stacks);
 }
 
 /**
